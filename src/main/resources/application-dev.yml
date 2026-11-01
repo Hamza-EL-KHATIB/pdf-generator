@@ -1,0 +1,21 @@
+pdf:
+  storage:
+    path: "./generated_pdfs"
+  cleanup:
+    file-retention-duration-ms: 1800000
+    cleanup-interval-ms: 600000
+  ranking:
+    root: "http://localhost:8080/export/pdf"
+    domain: "localhost"
+    environment: "local"
+    articles-per-pdf: 200
+    batch-size: 2
+  executor:
+    pool-size: 1
+  pages-to-remove: 2
+
+cors:
+  allowed-origin: "http://localhost:3000"
+
+server:
+  port: 8080

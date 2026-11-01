@@ -1,0 +1,25 @@
+pdf:
+    storage:
+        path: /data/generated_pdfs
+    cleanup:
+        file-retention-duration-ms: 1800000  # Time files are retained before deletion (30 minutes in milliseconds)
+        cleanup-interval-ms: 600000          # Frequency of cleanup checks (10 minutes in milliseconds)
+    ranking:
+        root: "${PDF_RANKING_ROOT:https://example.internal/web/export}"
+        domain: "${PDF_RANKING_DOMAIN:example.internal}"
+        environment: "local"
+        articles-per-pdf: 200
+        batch-size: 2
+    executor:
+        pool-size: 1
+    pages-to-remove: 2
+
+cors:
+    allowed-origin: "${CORS_ALLOWED_ORIGIN:https://example.internal}"
+
+server:
+    port: 8080
+
+spring:
+    application:
+        name: pdfgenerator
